@@ -6,7 +6,9 @@ public class T0026_RemoveDuplicatesFromSortedArray {
 
     /**
      * 1. 开辟新数组，遍历原数组 并拷贝非重复元素到新数组
+     * 
      * 2. 双指针遍历，遇到非重复的元素则拷贝到index+1指针处
+     *    0 ms
      */
     public int removeDuplicates(int[] nums) {
         if (nums == null || nums.length < 1) {

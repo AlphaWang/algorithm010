@@ -12,6 +12,7 @@ public class T0021_MergeTwoSortedLists {
 
     /**
      * 1. Loop
+     *    0 ms
      */
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
          if (l1 == null) return l2;
@@ -38,6 +39,7 @@ public class T0021_MergeTwoSortedLists {
 
     /**
      * 2. Recursion 
+     *    0 ms
      */
     public ListNode mergeTwoLists2(ListNode l1, ListNode l2) {
         if (l1 == null) return l2;

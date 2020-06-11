@@ -2,6 +2,10 @@ package com.alphawang.algorithm.week01;
 
 import java.util.Arrays;
 
+/**
+ * https://leetcode.com/problems/plus-one/
+ * Easy
+ */
 public class T0066_PlusOne {
 
     /**

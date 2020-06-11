@@ -5,7 +5,7 @@ package com.alphawang.algorithm.week01;
  * https://leetcode.com/problems/design-circular-deque/
  * Medium
  */
-public class T0641_DesignCircularDeque {
+public class T0641_DesignCircularDeque_LinkedList {
     
     int capacity;
     int size;
@@ -23,7 +23,7 @@ public class T0641_DesignCircularDeque {
     }
     
     /** Initialize your data structure here. Set the size of the deque to be k. */
-    public T0641_DesignCircularDeque(int k) {
+    public T0641_DesignCircularDeque_LinkedList(int k) {
        this.capacity = k;
        this.size = 0;
        head = new Node(-1);
@@ -155,7 +155,7 @@ public class T0641_DesignCircularDeque {
     }
     
     private static void test1() {
-        T0641_DesignCircularDeque circularDeque = new T0641_DesignCircularDeque(3); // set the size to be 3
+        T0641_DesignCircularDeque_LinkedList circularDeque = new T0641_DesignCircularDeque_LinkedList(3); // set the size to be 3
         println(circularDeque.insertLast(1));			// return true
         println(circularDeque.insertLast(2));			// return true
         println(circularDeque.insertFront(3));			// return true
@@ -170,7 +170,7 @@ public class T0641_DesignCircularDeque {
     private static void test2() {
 //      ["MyCircularDeque","insertFront","getFront","isEmpty","deleteFront","insertLast","getRear","insertLast","insertFront","deleteLast","insertLast","isEmpty"]
 //      [[8],[5],[],[],[],[3],[],[7],[7],[],[4],[]]
-        T0641_DesignCircularDeque circularDeque = new T0641_DesignCircularDeque(8);
+        T0641_DesignCircularDeque_LinkedList circularDeque = new T0641_DesignCircularDeque_LinkedList(8);
         println(circularDeque.insertFront(5));
         println(circularDeque.getFront());
         println(circularDeque.isEmpty());

@@ -1,7 +1,5 @@
 package com.alphawang.algorithm.week02;
 
-import static com.alphawang.algorithm.Utils.swap;
-
 import java.util.Arrays;
 
 public class Heap {
@@ -24,12 +22,6 @@ public class Heap {
     
     public String toString() {
         return Arrays.toString(array);
-    }
-    
-    public void printTree() {
-        int[] data = Arrays.copyOfRange(array, 1, array.length);
-        TreeNode tree = TreeNodeCreator.createTree(data);
-        TreeNodePrinter.print(tree);
     }
     
     public int[] getArray() {
@@ -56,7 +48,6 @@ public class Heap {
         heapifyFromBottom(array, count);
 
         System.out.println("---- Added " + data);
-        printTree();
     }
 
     /**
@@ -85,7 +76,6 @@ public class Heap {
         heapifyFromTop(array, count, 1);
 
         System.out.println("---- Removed " + max);
-        printTree();
         return max;
     }
 
@@ -167,6 +157,12 @@ public class Heap {
             swap(array, currentIndex, maxIndex);
             currentIndex = maxIndex;
         }
+    }
+
+    public static void swap(int[] array, int i, int j) {
+        int tmp = array[i];
+        array[i] = array[j];
+        array[j] = tmp;
     }
     
     public static void main(String[] args) {

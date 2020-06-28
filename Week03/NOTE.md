@@ -2,6 +2,74 @@
 
 ## 知识点
 
+- 泛型递归
+  - 树的面试题解法一般都是递归：节点定义、重复性（自相似性）
+
+  - 递归 - 循环：通过函数体来进行的循环。
+
+  - 代码模板
+
+    ```
+    public void recur(int level, int param) {
+      // terminator
+      if (level > MAX) {
+        return;
+      }
+      
+      //process current level
+      process(level, param);
+      
+      //dirll down
+      recur(level + 1, param);
+      
+      //restore current status
+    
+    }
+    ```
+
+  - 思维要点：
+
+    1. 不要人肉进行递归；
+    2. 找到最近最简方法，将其拆解成重复子问题；
+    3. 数学归纳法思维；
+
+  - 题目：爬楼梯，括号生成
+
+- 分治
+
+  - 代码模板
+
+    ```
+    public void divideConquer(problem, params) {
+      // terminator
+      if problem is Node {
+        printResult();
+        return;
+      }
+      
+      // prepare data
+      data = prepareData(problem)
+      subproblems = splitProblem(problem, data);
+      
+      // conquer subproblems
+      subResult1 = divideConquer(subproblems[0], params);
+      subResult2 = divideConquer(subproblems[1], params);
+      ...
+      
+      // process and generate the final result
+      result = processResult(subResult1, subResult2, ...);
+      
+      // revert the current level states
+      
+    }
+    ```
+
+- 回溯
+
+  - 采用试错的思想，尝试分步去解决一个问题。当发现分步答案不正确，则取消上一步的计算，尝试其他可能的解。
+  - 时间复杂度：指数。
+  - 题目：PowX-N，子集，众数，N皇后
+
 
 
 ## 作业
@@ -18,7 +86,8 @@ https://leetcode.com/problems/permutations/
   > 1: 递归回溯
   > for i in 0~len, path.add(nums[i])
   > dfs(depth + 1)
-  > 状态变量
+  > 状态变量hui                                 
+  >
   >    - depth: 递归到第几层 
   >    - path: 已经选择了哪些数 (Stack)
   >    - used: boolean[]，已经选择的数

@@ -25,9 +25,11 @@ https://leetcode.com/problems/walking-robot-simulation/
   >            注意如果碰到obstacle，则不动
 
 Medium
-- [ ] 127: 单词接龙 `*` `M`
+- [x] 127: 单词接龙 `*****` `M` (!!!)
 https://leetcode.com/problems/word-ladder/
-  > !!!
+  > 1: DFS //TODO
+  > 2: BFS. 先构造patternMap，再从beginWord开始按层次遍历
+  > 3: BFS 优化。分别从 beginWord/endWord 往中间夹逼
 
 - [x] 200: 岛屿数量 `*****` `M`
 https://leetcode.com/problems/number-of-islands/
@@ -54,6 +56,15 @@ https://leetcode.com/problems/search-in-rotated-sorted-array/discuss/14425/Conci
   > 2: 暴力解法优化：找到最小值，还原成有序数组 O(N) or O(logN)
   > 3: 二分法：左右侧总有一个是有序的
 
+- [x] 74: 搜索二维矩阵 `*****` `M`
+https://leetcode.com/problems/search-a-2d-matrix/
+  > 1: 两步走：先二分找到 子数组；再查子数组
+  > 2: 矩阵其实是 M * N 的有序数组
 
+- [x] 153: 旋转数组最小值  `*****` `M`  
+https://leetcode.com/problems/find-minimum-in-rotated-sorted-array
+  > 1: 遍历，如果nums[i] < num[i-1]，则找到。O(N)
+  > 2: 二分查找：if nums[mid] < nums[right], 往左侧找 
+  >             if nums[mid] > nums[right], 往右侧找
 
 ## 预习

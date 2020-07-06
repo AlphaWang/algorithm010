@@ -2,19 +2,132 @@
 
 ## 知识点
 
+DFS
+
+- 递归写法
+
+  ```
+  visited = set()
+  dfs(node, visited) {
+    // terminator
+    if (visited.contains(node)) {
+      return;
+    }
+    
+    visited.add(node);
+    // process current node
+    ...
+    
+    // drill down
+    for next_node in node.children():
+      if (!visited.contains(next_node)) {
+        dfs(next_node, visited);
+      }
+  }
+  ```
+
+- 非递归写法
+
+  ```
+  dfs(tree) {
+    visited = [];
+    stack = [tree.root];
+    
+    while (stack) {
+      node = stack.pop();
+      visited.add(node);
+      
+      process(node);
+      
+      nodes = getNodes(node);
+      stack.push(nodes);
+    }
+  }
+  ```
+
+  
+
+BFS
+
+- 代码模板
+
+  ```
+  bfs(node, start, end) {
+    queue = []
+    queue.append(start)
+    visited.add(start)
+    
+    while queue:
+      node = queue.poll();
+      visited.add(node);
+      
+      process(node);
+      
+      nodes = getNodes(node)
+      queue.offer(nodes)
+  }
+  ```
+
+
+
+贪心算法
+
+- 定义：在每一步选择中都采取在当前状态下最优的选择，从而希望全局最优。
+- vs 动态规划：动态规划会保存以前的运算结果，并根据以前的结果对当前进行选择，有回退功能。
+- 场景：图的最小生成树、哈夫曼编码；但对工程中的问题，一般不能得到全局最优解。
+  - 问题能否分解成子问题；
+  - 子问题的最优解能递推到最终问题的最优解；
+- 例子：Coin Change, [1, 5, 10, 20] 选出最少的硬币拼出总数 --> 可选硬币是倍数关系，贪心算法适用。
+- 难点：拿到一个题目，如何判断贪心算法可用？发
+
+
+
+二分查找
+
+- 二分查找的前提
+
+  - 目标函数单调性：递增，或递减。
+  - 存在上下界。
+  - 能够通过索引访问。--> 链表不可二分搜索
+
+- 代码模板
+
+  ```
+  left = 0;
+  right = arr.length - 1;
+  
+  while (left <= right) {
+    mid = left + (right - left) / 2;
+    if (arr[mid] == target) {
+       return mid;
+    } else if (arr[mid] > target) {
+       left = mid + 1;
+    } else if (arr[mid] < target) {
+       right = mid - 1;
+    }
+  }
+  ```
+
+  
+
+
+
 ## 作业
 
 Simple
 - [x] 860: 柠檬水找零 `*****` `E` 
-https://leetcode.com/problems/lemonade-change/
+  https://leetcode.com/problems/lemonade-change/
+
   > 遍历，记录可用的零钱数目；收到整钱后，对零钱数目扣减
 
 - [x] 122: 股票买卖 `*****` `E`
-https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/  
+  https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/  
+
   > 2: 贪心（122）：只要后一天价格比前一天高，则前一天买 后一天卖
 
 - [x] 455: 分发饼干 `*****` `E`
-https://leetcode.com/problems/assign-cookies/
+  https://leetcode.com/problems/assign-cookies/
+
   > 贪心，先排序，从最小的胃口还是满足 
 
 - [x] 874: 模拟行走机器人 `*****` `E`
@@ -32,7 +145,8 @@ https://leetcode.com/problems/word-ladder/
   > 3: BFS 优化。分别从 beginWord/endWord 往中间夹逼
 
 - [x] 200: 岛屿数量 `*****` `M`
-https://leetcode.com/problems/number-of-islands/
+  https://leetcode.com/problems/number-of-islands/
+
   > 遍历矩阵，碰到1 --> res++，并且 DFS 遍历周边节点，置为0
 
 - [x] 529: 扫雷游戏 `*****` `M`
@@ -91,7 +205,15 @@ https://leetcode.com/problems/jump-game-ii/
 
 - [x] 433: 最小基因变化 `*****` `M`
 https://leetcode.com/problems/minimum-genetic-mutation/
+  
   > 1: BFS, 类似127 单词接龙
 
 
 ## 预习
+
+- [x] 300: 最长上升子序列 `*****` `M`
+https://leetcode.com/problems/longest-increasing-subsequence/
+  > 2: DP，N平方   
+  >    状态：`dp[i]` 从头到i的最长子序列长度  
+  >    方程：for i 0-->n-1, j 0-->i-1, if a[j]<a[i] `dp[i] = max(dp[j]) + 1`
+  > 

@@ -23,4 +23,16 @@ https://leetcode.com/problems/decode-ways/
   >  2 如果"能"和前一个数组成字母：  dp[i] = dp[i-1] + dp[i-2] // 单独构成字母  +  与前一个数组成字母
   >  3 如果"不能"和前一个数组成字母：dp[i] = dp[i-1]           // 单独构成字母
 
+- [x] 221: 最大正方形 `*****` `M`
+https://leetcode.com/problems/maximal-square/ 
+  > 1: DP
+  >    状态 dp[i][j] : 以(i,j)元素为左上角的最大边长 
+  >    方程 dp[i][j] = min{ dp[i+1][j], dp[i][j+1], dp[i+1][j+1] } + 1
+  >                    min{ 右方、下方、右下方 的最大边长 } + 1
+  >    
+  >     此题状态方程，怎么想到的！！！
+
+
+
+
 ## 预习

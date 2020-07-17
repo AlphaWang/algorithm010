@@ -32,7 +32,31 @@ https://leetcode.com/problems/maximal-square/
   >    
   >     此题状态方程，怎么想到的！！！
 
+- [ ] 621: 任务调度器 `*****` `M`
+https://leetcode.com/problems/task-scheduler/
+  > 不会！
 
+- [ ] 647: 回文子串 `***` `M`
+https://leetcode.com/problems/palindromic-substrings/
+  > 不会！
+
+- [x] 32: 最长有效括号 `*****` `H`
+https://leetcode.com/problems/longest-valid-parentheses/
+  > 1: 暴力，for i = n ~ 2, 遍历子串 检查是否 valid  
+  > 2: 栈，保存index  
+  >    保持栈底元素为当前已经遍历过的元素中「最后一个"没有被匹配的右括号"的下标」，即有效子串的分割线  
+  > 3: DP  
+  >    状态: dp[i] 从0~i的最长有效子串。注意如果i是左括号，则dp[i] = 0   
+  >    方程: dp[i] = 2 + dp[i-1] + dp[i - dp[i-1] - 2]   
+  >         x = i - dp[i-1] - 1: 表示与i对应的左括号位置  
+  >         1："2"，与x位置匹配的基础长度 2      
+  >         2：dp[i-1]: 前一个位置的长度    
+  >         3：dp[i - dp[i-1] - 2] 即 x - 1：x之前的长度  
+  >         
+  >   这个状态转移方程，怎么想到的！！！ 
+  >
+  > 4: 正向+逆向遍历，记录左右括号个数   
+  >    为何要逆向再来一遍？"(( ( (())" --> 如果只正向，i=2位置的左括号会导致后续的有效子串被忽略     
 
 
 ## 预习

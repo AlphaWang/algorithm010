@@ -132,6 +132,16 @@ https://leetcode.com/problems/longest-valid-parentheses/
   > 4: 正向+逆向遍历，记录左右括号个数   
   >    为何要逆向再来一遍？"(( ( (())" --> 如果只正向，i=2位置的左括号会导致后续的有效子串被忽略     
 
+- [x] 72: 编辑距离 `*****` `H`
+https://leetcode.com/problems/edit-distance/
+  > 1: 暴力，bfs + queue  
+  > 2: DP   
+  >    状态：`dp[i,j]` word1的前i个字符，替换为word2前j个字符，需要的最少步数   
+  >    方程：if w1[i] == w2[j], `dp[i,j] = dp[i-1,j-1]`;   
+            if w1[i] != w2[j], `dp[i,j] = 1 + min{ dp[i-1,j], dp[i,j-1], dp[i-1,j-1] }`; //分别对应增/删/替换
+  > 3: DP 可改为递归 
+  >    DP - 自底向上
+  >    递归 - 自顶向下
 
 ## 预习
 

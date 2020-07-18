@@ -1,6 +1,74 @@
-# 学习笔记
+# Week 06 学习笔记
 
 ## 知识点
+
+
+递归代码模板
+```
+public void recur(int level, int param) {
+  // terminator
+  if (level > MAX) {
+    return;
+  }         
+
+  // process current level  
+  process(level, param);
+
+  // drill down 
+  recur(level + 1, param);
+
+  // restore current status 
+  ...
+}
+```
+
+分治代码模板
+```
+public void divideConquer(problem, params) {   
+
+  // terminator
+  if problem is None {
+    printResult();
+    return;
+  }
+  
+  // prepare data
+  data = prepareData(problem)
+  subproblems = splitProblem(problem, data);
+  
+  // conquer subproblems
+  subResult1 = divideConquer(subproblems[0], params);
+  subResult2 = divideConquer(subproblems[1], params);
+  ...
+  
+  // process and generate the final result
+  result = processResult(subResult1, subResult2, ...);
+  
+  // revert the current level states
+  
+}
+
+```
+
+- 感触
+  - 人肉递归低效
+  - 找到最近最简方法，拆解成可重复解决的问题
+  - 数学归纳法思维
+
+动态规划：分治 + 最优子结构
+- vs. 递归、分治
+  - 共性：找到重复子问题
+  - 差异：最优子结构，冲突可以淘汰次优解
+  
+- 关键点
+  - 最优子结构 `dp[n] = bestOf(dp[n-1], dp[n-2], ...)`
+  - 存储中间状态 `dp[i]`
+  - 递推公式 `dp[i] = dp[i-1] + dp[i-2]`
+  
+- 例题
+  - 斐波那契数列
+  - 路径计算
+  - 最长公共子序列  
 
 ## 作业
 
@@ -66,3 +134,5 @@ https://leetcode.com/problems/longest-valid-parentheses/
 
 
 ## 预习
+
+ - TODO

@@ -42,7 +42,7 @@
     ```
     public void divideConquer(problem, params) {
       // terminator
-      if problem is Node {
+      if problem is None {
         printResult();
         return;
       }

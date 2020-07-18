@@ -14,31 +14,37 @@ https://leetcode.com/problems/minimum-path-sum/
 
 - [x] 91: 解码方法 `*****` `M`
 https://leetcode.com/problems/decode-ways/
-  > 1: DP
-  > 状态：dp[i] 表示从 0~i 个元素的结果
-  > 方程：
+  > 1: DP       
+  > 状态：dp[i] 表示从 0~i 个元素的结果    
+  > 方程：  
   >  1 如果当前元素为0：
-  >    1.1 如果"能"和前一个数组成字母（prev == 1 or 2 ）：dp[i] = dp[i-2]
-  >    1.2 如果"不能"喝前一个数组成字母：                 dp[i] = 0 
-  >  2 如果"能"和前一个数组成字母：  dp[i] = dp[i-1] + dp[i-2] // 单独构成字母  +  与前一个数组成字母
-  >  3 如果"不能"和前一个数组成字母：dp[i] = dp[i-1]           // 单独构成字母
+  >    1.1 如果"能"和前一个数组成字母（prev == 1 or 2 ）：dp[i] = dp[i-2]  
+  >    1.2 如果"不能"喝前一个数组成字母：                 dp[i] = 0      
+  >  2 如果"能"和前一个数组成字母：  dp[i] = dp[i-1] + dp[i-2] // 单独构成字母  +  与前一个数组成字母   
+  >  3 如果"不能"和前一个数组成字母：dp[i] = dp[i-1]           // 单独构成字母   
 
 - [x] 221: 最大正方形 `*****` `M`
 https://leetcode.com/problems/maximal-square/ 
-  > 1: DP
-  >    状态 dp[i][j] : 以(i,j)元素为左上角的最大边长 
-  >    方程 dp[i][j] = min{ dp[i+1][j], dp[i][j+1], dp[i+1][j+1] } + 1
-  >                    min{ 右方、下方、右下方 的最大边长 } + 1
+  > 1: DP   
+  >    状态 dp[i][j] : 以(i,j)元素为左上角的最大边长   
+  >    方程 dp[i][j] = min{ dp[i+1][j], dp[i][j+1], dp[i+1][j+1] } + 1   
+  >                    min{ 右方、下方、右下方 的最大边长 } + 1    
   >    
   >     此题状态方程，怎么想到的！！！
 
-- [ ] 621: 任务调度器 `*****` `M`
+- [x] 621: 任务调度器 `***` `M`
 https://leetcode.com/problems/task-scheduler/
-  > 不会！
+  > 1: 排序，先排数目最多的任务：计算 idleSlot 个数    
+  > TODO 不会！ 
 
-- [ ] 647: 回文子串 `***` `M`
+- [x] 647: 回文子串 `*****` `M`
 https://leetcode.com/problems/palindromic-substrings/
-  > 不会！
+  > 1: DP  
+  >    状态：dp[i][j] 表示字符串s在[i,j]区间的子串是否是一个回文串。  
+  >    状态转移方程：当 s[i] == s[j] && (j - i <= 1 || dp[i + 1][j - 1]) 时，dp[i][j]=true，否则为false    
+  > 
+  > 2: 从中心扩展   
+  >    区分长度为奇数、偶数的子串，分别处理     
 
 - [x] 32: 最长有效括号 `*****` `H`
 https://leetcode.com/problems/longest-valid-parentheses/

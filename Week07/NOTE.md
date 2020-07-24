@@ -279,4 +279,15 @@ https://leetcode.com/problems/friend-circles/
   > 1: DFS/BFS 类似岛屿问题，O(N^2)
   > 2: 并查集，O(N^3)
 
+- [x] 200: 岛屿数量 `*****` `M`
+https://leetcode.com/problems/number-of-islands/
+  > 遍历矩阵，碰到1 --> res++，并且 DFS 遍历周边节点，置为0
+
+- [x] 130: 被围绕的区域 `***` `M`
+https://leetcode.com/problems/surrounded-regions/
+  > 1: DFS
+  > 2: 并查集 //TODO
+
+
+
 ## 预习

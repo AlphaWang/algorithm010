@@ -1,6 +1,53 @@
 # Week 07 学习笔记
 
 ## 知识点
+
+- Trie 树
+    - 定义：字典树，Trie树，单词查找树，建树；
+        - 节点本身不存储完整单词。
+        - 从根节点到某一节点，其路径上的字符连起来，为该节点对应的字符串。
+        - 每个节点的所有子节点路径代表的字符都不相同。
+    - 应用：统计和排序字符串。最大限度减少字符串比较，查询效率比 hash 高
+    - 思想：空间换时间，利用字符串公共前缀来降低查询时间。       
+
+- 并查集 Disjoint Set
+    - 使用场景：组团、配对问题。
+    - 基本操作：
+        - makeSet(s): 创建并查集。
+        - unionSet(x, y): 合并不想交的集合。
+        - find(x): 查找x所在的集合的代表。
+    - 实现
+        ```
+        class UnionFind {
+          int count = 0;
+          int[] parent;
+      
+          public UnionFind(int n) { 
+            count = n;
+            parent = new int[n];
+            for (int i = 0; i < n; i++) {
+              parent[i] = i;
+            }
+          } 
+      
+          public int find(int p) {
+            while (p != parent[p]) {   
+              // parent[p] = parent[parent[p]];  // 路径压缩
+              p = parent[p];
+            }   
+            return p;
+          }   
+      
+          public void union(int p, int q) {
+            int rootP = find(p);
+            int rootQ = find(q);
+            if (rootP == rootQ) return;
+            parent[rootP] = rootQ;
+            count--;
+          }
+        }
+        ```
+
 A* 代码模板 
 ``` 
 	public class AStar
@@ -227,5 +274,9 @@ https://leetcode.com/problems/implement-trie-prefix-tree/
   > 数组实现，定义 TrieNode
   > TrieNode 封装 get / put / contains
 
+- [x] 547: 朋友圈 `***` `M`
+https://leetcode.com/problems/friend-circles/
+  > 1: DFS/BFS 类似岛屿问题，O(N^2)
+  > 2: 并查集，O(N^3)
 
 ## 预习

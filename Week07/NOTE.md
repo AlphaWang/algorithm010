@@ -288,6 +288,10 @@ https://leetcode.com/problems/surrounded-regions/
   > 1: DFS
   > 2: 并查集 //TODO
 
+- [x] 36: 有效数独 `*****` `M`
+https://leetcode.com/problems/valid-sudoku/
+  > 0: 用3个数组，分别存储 行、列、块 的已出现数字个数
 
+Q: 有没有其他解法？
 
 ## 预习

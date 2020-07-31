@@ -108,4 +108,20 @@ https://leetcode.com/problems/number-of-1-bits/
   > 2: 枚举所有位数：& mask(初始值=1), mask每次左移一位
   > 3: x = x & (x-1) 清零最低位的1
 
+- [x] 231: Power of Two `***` `E`  
+https://leetcode.com/problems/power-of-two/    
+  > 1: 不断 mod 2, 测试是否能被2整除 --> 即不断右移一位，测试最后一位   
+  > 2: 数学求 log2     
+  > 3: n & (n-1) == 0, 去除最后一个 1 。利用特点：最前面是1，后面全0：
+  > 4: n & (-n) == n, 获取最后一个1  
+ 
+ 
 ## 预习
+
+
+
+
+
+
+
+

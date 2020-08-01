@@ -114,9 +114,45 @@ https://leetcode.com/problems/power-of-two/
   > 2: 数学求 log2     
   > 3: n & (n-1) == 0, 去除最后一个 1 。利用特点：最前面是1，后面全0：
   > 4: n & (-n) == n, 获取最后一个1  
+
+- [x] 190: 颠倒二进制位 `***` `E`
+https://leetcode.com/problems/reverse-bits/
+  > 1: 转换成字符串，再颠倒
+  > 2: n >> 1，依次处理最低位
+  >    https://leetcode-cn.com/problems/reverse-bits/solution/zhi-qi-ran-zhi-qi-suo-yi-ran-wei-yun-suan-jie-fa-x/
+  > 
+
+- [x] 1122: 数组的相对排序 `*****` `E`
+https://leetcode.com/problems/relative-sort-array/
+  > 1: 计数排序
+  >    先计算arr1每个元素的个数，再按照arr2的顺序重置arr1；再遍历counter处理!arr2元素
+  >    注意，重置数据的过程中 while(counter[i]-- > 0) ，清空counter数组
  
+- [x] 242: 有效的字母异位词 `*****` `E`   
+https://leetcode.com/problems/valid-anagram/   
+  > 1: 先排序，再比较   
+  > 2: Map 计数，比较Map是否相同  
+  > 3: int[26] 计数   
+ 
+- [x] 56: 合并区间 `*****` `M`
+https://leetcode.com/problems/merge-intervals/
+  > 1: 按首位排序，依次比较prev vs. curr   
+ 
+- [x] 493: 翻转对 `***` `H` 
+https://leetcode.com/problems/reverse-pairs/
+  > 1: 嵌套循环 O(N^2)
+  > 2: merge-sort O(NlogN)，归并的过程中做统计
+
  
 ## 预习
+
+
+
+
+
+
+
+
 
 
 
